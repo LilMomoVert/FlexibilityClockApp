@@ -62,13 +62,13 @@ export default class DateTimePickerFlex extends Component {
   render() {
     return (
       <>
-      <View style={styles.container}>
+      <View>
 
-      <View style={styles.container2}>
-      <Text style={styles.titleText}>{this.state.time}</Text>
+      <View >
+      <Text >{this.state.time}</Text>
       </View>
-      <TouchableOpacity style={styles.timeButton} title="Velg tidspunkt" onPress={this.showDateTimePicker}>
-        <Text style={styles.buttonTxt}>Velg tidspunkt</Text>
+      <TouchableOpacity title="Velg tidspunkt" onPress={this.showDateTimePicker}>
+        <Text>Velg tidspunkt</Text>
         </TouchableOpacity>
         <DateTimePicker
           isVisible={this.state.isDateTimePickerVisible}
@@ -81,12 +81,12 @@ export default class DateTimePickerFlex extends Component {
         
         />
 
-        <View style={styles.container2}>
-        <TouchableOpacity style={styles.formatButton} title="12H" onPress={this.handleFormat.bind(this, "12H")}>
-        <Text style={styles.buttonTxt}>12H</Text>
+        <View >
+        <TouchableOpacity title="12H" onPress={this.handleFormat.bind(this, "12H")}>
+        <Text >12H</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.formatButton} title="24H" onPress={this.handleFormat.bind(this, "24H")}>
-        <Text style={styles.buttonTxt}>24H</Text>
+        <TouchableOpacity  title="24H" onPress={this.handleFormat.bind(this, "24H")}>
+        <Text >24H</Text>
         </TouchableOpacity>
         </View>
 
