@@ -32,14 +32,13 @@ export default class DateTimePickerFlex extends Component {
 
   handleFormat = format => {
     let time = this.state.time;
-
+    
     if(this.state.format === "24H"){
       time = moment(time, "HH:mm")
     }else if(this.state.format ==="12H"){
       time = moment(time, "HH:mm a");
     }
     
-
     if(format === "12H"){
       this.setState({ format: format, time: moment(time).format("hh:mm A") })
 
@@ -64,31 +63,29 @@ export default class DateTimePickerFlex extends Component {
     return (
       <>
       <View style={styles.container}>
-
-      <View style={styles.containerLayout}>
-      <Text style={styles.titleText}>{this.state.time}</Text>
-      </View>
-      <TouchableOpacity style={styles.timeButton} title="Velg tidspunkt" onPress={this.showDateTimePicker}>
-        <Text style={styles.buttonTxt}>Velg tidspunkt</Text>
-        </TouchableOpacity>
-        <DateTimePicker
-          isVisible={this.state.isDateTimePickerVisible}
-          onConfirm={this.handleDatePicked}
-          onCancel={this.hideDateTimePicker}
-          mode="time"
-          confirmTextIOS="Bekreft"
-          cancelTextIOS="Avbryt"
-          titleIOS="Velg et klokkeslett"
-        />
         <View style={styles.containerLayout}>
-        <TouchableOpacity style={styles.formatButton} title="12H" onPress={this.handleFormat.bind(this, "12H")}>
-        <Text style={styles.buttonTxt}>12H</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.formatButton} title="24H" onPress={this.handleFormat.bind(this, "24H")}>
-        <Text style={styles.buttonTxt}>24H</Text>
-        </TouchableOpacity>
+            <Text style={styles.titleText}>{this.state.time}</Text>
         </View>
-
+        <TouchableOpacity style={styles.timeButton} title="Velg tidspunkt" onPress={this.showDateTimePicker}>
+            <Text style={styles.buttonTxt}>Velg tidspunkt</Text>
+        </TouchableOpacity>
+            <DateTimePicker
+                isVisible={this.state.isDateTimePickerVisible}
+                onConfirm={this.handleDatePicked}
+                onCancel={this.hideDateTimePicker}
+                mode="time"
+                confirmTextIOS="Bekreft"
+                cancelTextIOS="Avbryt"
+                titleIOS="Velg et klokkeslett"
+            />
+            <View style={styles.containerLayout}>
+                <TouchableOpacity style={styles.formatButton} title="12H" onPress={this.handleFormat.bind(this, "12H")}>
+                    <Text style={styles.buttonTxt}>12H</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.formatButton} title="24H" onPress={this.handleFormat.bind(this, "24H")}>
+                    <Text style={styles.buttonTxt}>24H</Text>
+                </TouchableOpacity>
+            </View>
         </View>
       </>
     );
@@ -133,12 +130,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold'
   },
+
   container: {
       flex: 1,
       flexDirection: 'column',
       alignItems: "stretch",
       justifyContent: 'center'
   },
+
   containerLayout: {
   flexDirection: 'row', 
   alignSelf: 'center'
