@@ -63,32 +63,29 @@ export default class DateTimePickerFlex extends Component {
     return (
       <>
       <View>
-
-      <View >
-      <Text >{this.state.time}</Text>
-      </View>
-      <TouchableOpacity title="Velg tidspunkt" onPress={this.showDateTimePicker}>
-        <Text>Velg tidspunkt</Text>
-        </TouchableOpacity>
-        <DateTimePicker
-          isVisible={this.state.isDateTimePickerVisible}
-          onConfirm={this.handleDatePicked}
-          onCancel={this.hideDateTimePicker}
-          mode="time"
-          confirmTextIOS="Bekreft"
-          cancelTextIOS="Avbryt"
-          titleIOS="Velg et klokkeslett"
-        
-        />
-
         <View >
-        <TouchableOpacity title="12H" onPress={this.handleFormat.bind(this, "12H")}>
-        <Text >12H</Text>
-        </TouchableOpacity>
-        <TouchableOpacity  title="24H" onPress={this.handleFormat.bind(this, "24H")}>
-        <Text >24H</Text>
-        </TouchableOpacity>
+        <Text >{this.state.time}</Text>
         </View>
+        <TouchableOpacity title="Velg tidspunkt" onPress={this.showDateTimePicker}>
+            <Text>Velg tidspunkt</Text>
+            </TouchableOpacity>
+            <DateTimePicker
+            isVisible={this.state.isDateTimePickerVisible}
+            onConfirm={this.handleDatePicked}
+            onCancel={this.hideDateTimePicker}
+            mode="time"
+            confirmTextIOS="Bekreft"
+            cancelTextIOS="Avbryt"
+            titleIOS="Velg et klokkeslett"
+            />
+            <View >
+            <TouchableOpacity title="12H" onPress={this.handleFormat.bind(this, "12H")}>
+            <Text >12H</Text>
+            </TouchableOpacity>
+            <TouchableOpacity  title="24H" onPress={this.handleFormat.bind(this, "24H")}>
+            <Text >24H</Text>
+            </TouchableOpacity>
+            </View>
 
         </View>
       </>
