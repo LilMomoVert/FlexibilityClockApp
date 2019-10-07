@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {StyleSheet, Button, View, Text, TouchableOpacity } from "react-native";
+import {StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import moment from "moment";
 import { white, bold } from "ansi-colors";
@@ -32,7 +32,7 @@ export default class DateTimePickerFlex extends Component {
 
   handleFormat = format => {
     let time = this.state.time;
-    
+
     if(this.state.format === "24H"){
       time = moment(time, "HH:mm")
     }else if(this.state.format ==="12H"){
